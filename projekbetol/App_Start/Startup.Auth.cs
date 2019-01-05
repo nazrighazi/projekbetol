@@ -54,9 +54,9 @@ namespace projekbetol
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+           app.UseFacebookAuthentication(
+              appId: "296783824292310",
+              appSecret: "eed7c09ead8d3630f219e9a4e909df65");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
