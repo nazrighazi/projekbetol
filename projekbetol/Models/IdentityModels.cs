@@ -29,5 +29,11 @@ namespace projekbetol.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<projekbetol.IssueBook> IssueBooks { get; set; }
+
+        public System.Data.Entity.DbSet<projekbetol.Book> Books { get; set; }
+
+        public System.Data.Entity.DbSet<projekbetol.Student> Students { get; set; }
     }
 }

@@ -12,12 +12,12 @@ namespace projekbetol.Controllers
 {
     public class IssueBooksController : Controller
     {
-        private Database1Entities1 db = new Database1Entities1();
+        private Database1Entities3 db = new Database1Entities3();
 
         // GET: IssueBooks
         public ActionResult Index()
         {
-            var issueBooks = db.IssueBooks.Include(i => i.Book).Include(i => i.Student);
+            var issueBooks = db.IssueBooks.Include(i => i.Book).Include(i => i.Status).Include(i => i.Student);
             return View(issueBooks.ToList());
         }
 
@@ -40,6 +40,7 @@ namespace projekbetol.Controllers
         public ActionResult Create()
         {
             ViewBag.BookId = new SelectList(db.Books, "Id", "BookName");
+            ViewBag.StatusId = new SelectList(db.Status, "Id", "Status1");
             ViewBag.StudentId = new SelectList(db.Students, "Id", "StudentName");
             return View();
         }
@@ -49,7 +50,7 @@ namespace projekbetol.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,BookId,StudentId,Status")] IssueBook issueBook)
+        public ActionResult Create([Bind(Include = "Id,BookId,StatusId,Date,StudentId")] IssueBook issueBook)
         {
             if (ModelState.IsValid)
             {
@@ -59,6 +60,7 @@ namespace projekbetol.Controllers
             }
 
             ViewBag.BookId = new SelectList(db.Books, "Id", "BookName", issueBook.BookId);
+            ViewBag.StatusId = new SelectList(db.Status, "Id", "Status1", issueBook.StatusId);
             ViewBag.StudentId = new SelectList(db.Students, "Id", "StudentName", issueBook.StudentId);
             return View(issueBook);
         }
@@ -76,6 +78,7 @@ namespace projekbetol.Controllers
                 return HttpNotFound();
             }
             ViewBag.BookId = new SelectList(db.Books, "Id", "BookName", issueBook.BookId);
+            ViewBag.StatusId = new SelectList(db.Status, "Id", "Status1", issueBook.StatusId);
             ViewBag.StudentId = new SelectList(db.Students, "Id", "StudentName", issueBook.StudentId);
             return View(issueBook);
         }
@@ -85,7 +88,7 @@ namespace projekbetol.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,BookId,StudentId,Status")] IssueBook issueBook)
+        public ActionResult Edit([Bind(Include = "Id,BookId,StatusId,Date,StudentId")] IssueBook issueBook)
         {
             if (ModelState.IsValid)
             {
@@ -94,6 +97,7 @@ namespace projekbetol.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.BookId = new SelectList(db.Books, "Id", "BookName", issueBook.BookId);
+            ViewBag.StatusId = new SelectList(db.Status, "Id", "Status1", issueBook.StatusId);
             ViewBag.StudentId = new SelectList(db.Students, "Id", "StudentName", issueBook.StudentId);
             return View(issueBook);
         }

@@ -12,16 +12,18 @@ namespace projekbetol
     using System;
     using System.Collections.Generic;
     
-    public partial class IssueBook
+    public partial class Status
     {
-        public int Id { get; set; }
-        public int BookId { get; set; }
-        public int StatusId { get; set; }
-        public System.DateTime Date { get; set; }
-        public int StudentId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Status()
+        {
+            this.IssueBooks = new HashSet<IssueBook>();
+        }
     
-        public virtual Book Book { get; set; }
-        public virtual Status Status { get; set; }
-        public virtual Student Student { get; set; }
+        public int Id { get; set; }
+        public string Status1 { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<IssueBook> IssueBooks { get; set; }
     }
 }

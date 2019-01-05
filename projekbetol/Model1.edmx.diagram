@@ -4,12 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7051b4f0b77642efbd9c1e6ee907a5fc" Name="Diagram1">
+      <Diagram DiagramId="db870d58a3454515ae8127e28ec6cafd" Name="Diagram1">
         <EntityTypeShape EntityType="Database1Model.Book" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Database1Model.IssueBook" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Student" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <AssociationConnector Association="Database1Model.FK__IssueBook__BookI__2B3F6F97" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK__IssueBook__Stude__2C3393D0" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Database1Model.Status" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Student" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="Database1Model.FK__IssueBook__BookI__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__IssueBook__Statu__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__IssueBook__Stude__4BAC3F29" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
