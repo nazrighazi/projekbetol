@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Statistics";
 }
 <script src="~/Scripts/Chart/export-data.js"></script>
 <script src="~/Scripts/Chart/exporting.js"></script>
@@ -20,7 +20,7 @@
             type: 'pie'
         },
         title: {
-            text: 'Browser market shares in January, 2018'
+            text: 'Borrowed Book and Returned Book Statistics'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -39,37 +39,15 @@
             }
         },
         series: [{
-            name: 'Brands',
+            name: 'Book Issued',
             colorByPoint: true,
             data: [{
-                name: 'Chrome',
+                name: 'Borrowed',
                 y: 61.41,
-                sliced: true,
-                selected: true
+            
             }, {
-                name: 'Internet Explorer',
+                name: 'Returned',
                 y: 11.84
-            }, {
-                name: 'Firefox',
-                y: 10.85
-            }, {
-                name: 'Edge',
-                y: 4.67
-            }, {
-                name: 'Safari',
-                y: 4.18
-            }, {
-                name: 'Sogou Explorer',
-                y: 1.64
-            }, {
-                name: 'Opera',
-                y: 1.6
-            }, {
-                name: 'QQ',
-                y: 1.2
-            }, {
-                name: 'Other',
-                y: 2.61
             }]
         }]
     });
