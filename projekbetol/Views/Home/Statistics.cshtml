@@ -3,14 +3,16 @@
     ViewBag.Title = "Statistics";
 }
 <script src="~/Scripts/Chart/export-data.js"></script>
-<script src="~/Scripts/Chart/exporting.js"></script>
 <script src="~/Scripts/Chart/highcharts.js"></script>
+
 
 <div class="jumbotron">
     <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 </div>
 
 <script>
+
+
 
     Highcharts.chart('container', {
         chart: {
@@ -20,7 +22,7 @@
             type: 'pie'
         },
         title: {
-            text: 'Borrowed Book and Returned Book Statistics'
+            text: 'Browser market shares in January, 2018'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -39,18 +41,42 @@
             }
         },
         series: [{
-            name: 'Book Issued',
+            name: 'Brands',
             colorByPoint: true,
             data: [{
-                name: 'Borrowed',
+                name: 'Chrome',
                 y: 61.41,
-            
+                sliced: true,
+                selected: true
             }, {
-                name: 'Returned',
+                name: 'Internet Explorer',
                 y: 11.84
+            }, {
+                name: 'Firefox',
+                y: 10.85
+            }, {
+                name: 'Edge',
+                y: 4.67
+            }, {
+                name: 'Safari',
+                y: 4.18
+            }, {
+                name: 'Sogou Explorer',
+                y: 1.64
+            }, {
+                name: 'Opera',
+                y: 1.6
+            }, {
+                name: 'QQ',
+                y: 1.2
+            }, {
+                name: 'Other',
+                y: 2.61
             }]
         }]
     });
+   
+
 </script>
 
 
