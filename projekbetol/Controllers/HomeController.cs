@@ -33,6 +33,7 @@ namespace projekbetol.Controllers
         {
             int Borrow = context.IssueBooks.Where(x => x.StatusId == 1).Count();
             int Return = context.IssueBooks.Where(x => x.StatusId == 2).Count();
+            int Student = context.Students.Where(x => x.Id == x.Id).Count();
 
             Ratio obj = new Ratio();
             obj.Borrow = Borrow;
