@@ -31,13 +31,19 @@ namespace projekbetol.Controllers
 
         public ActionResult Statistics()
         {
+            
+
             int Borrow = context.IssueBooks.Where(x => x.StatusId == 1).Count();
             int Return = context.IssueBooks.Where(x => x.StatusId == 2).Count();
+            int Book = context.Books.Where(x => x.Id == x.Id).Count();
+            int Student = context.Students.Where(x => x.Id == x.Id).Count();
 
             Ratio obj = new Ratio();
             obj.Borrow = Borrow;
             obj.Return = Return;
-            return View(Json(obj, JsonRequestBehavior.AllowGet));
+            obj.Book = Book;
+            obj.Student = Student;
+            return Json(obj, JsonRequestBehavior.AllowGet);
         }
 
         public class Ratio
@@ -45,6 +51,10 @@ namespace projekbetol.Controllers
             public int Borrow { get; set; }
 
             public int Return { get; set; }
+
+            public int Book { get; set; }
+
+            public int Student { get; set; }
         }
     }
 }
