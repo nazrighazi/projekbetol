@@ -10,6 +10,7 @@ using projekbetol;
 
 namespace projekbetol.Controllers
 {
+    [Authorize]
     public class BooksController : Controller
     {
         private Database1Entities3 db = new Database1Entities3();
