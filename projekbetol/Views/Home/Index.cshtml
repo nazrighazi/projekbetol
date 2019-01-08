@@ -40,10 +40,10 @@
                         type: 'pie'
                     },
                     title: {
-                        text: 'Borrow and Return statistics of the Books'
+                        text: 'Books and Students'
                     },
                     tooltip: {
-                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        pointFormat: '{series.name}: <b>{point.y:.1f}%</b>'
                     },
                     plotOptions: {
                         pie: {
@@ -51,7 +51,7 @@
                             cursor: 'pointer',
                             dataLabels: {
                                 enabled: true,
-                                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                format: '<b>{point.name}</b>: {point.y:.1f}%',
                                 style: {
                                     color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
                                 }
@@ -62,12 +62,12 @@
                         name: 'Issued Book',
                         colorByPoint: true,
                         data: [{
-                            name: 'Borrow',
-                            y: result.Borrow
+                            name: 'Books Available',
+                            y: result.Book
 
                         }, {
-                            name: 'Return',
-                            y: result.Return
+                            name: 'Students Registered',
+                            y: result.Student
                         }]
                     }]
                 });
