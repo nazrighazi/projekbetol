@@ -37,7 +37,7 @@ namespace projekbetol.Controllers
             Ratio obj = new Ratio();
             obj.Borrow = Borrow;
             obj.Return = Return;
-            return Json(obj, JsonRequestBehavior.AllowGet);
+            return View(Json(obj, JsonRequestBehavior.AllowGet));
         }
 
         public class Ratio
@@ -45,12 +45,6 @@ namespace projekbetol.Controllers
             public int Borrow { get; set; }
 
             public int Return { get; set; }
-        }
-
-        public ActionResult Graph()
-        {
-            
-            return View();
         }
     }
 }
