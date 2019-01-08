@@ -293,6 +293,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Chart\data.js" />
+    <Content Include="Scripts\Chart\drilldown.js" />
     <Content Include="Scripts\Chart\export-data.js" />
     <Content Include="Scripts\Chart\exporting.js" />
     <Content Include="Scripts\Chart\highcharts.js" />
